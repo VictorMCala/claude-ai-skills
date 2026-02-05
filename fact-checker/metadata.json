@@ -1,0 +1,22 @@
+{
+  "name": "fact-checker",
+  "version": "1.0.0",
+  "description": "Systematically fact-check statements and problems against real documentation, meetings, ICMs, and repositories",
+  "author": "Victor Calauhia",
+  "icon": "🔍",
+  "trigger": {
+    "type": "command",
+    "pattern": "fact-check"
+  },
+  "capabilities": [
+    "workiq",
+    "todo-tracking",
+    "evidence-compilation",
+    "multi-source-verification"
+  ],
+  "examples": [
+    "/fact-check The deployment pipeline is broken in GCC",
+    "/fact-check Feature X has a 3-second latency issue",
+    "/fact-check Web grounding doesn't work in restricted clouds"
+  ]
+}
