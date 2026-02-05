@@ -1,0 +1,24 @@
+{
+  "name": "ms-fact-check",
+  "version": "2.0.0",
+  "description": "Systematically fact-check statements against Microsoft 365 documentation, meetings, ICMs, and repositories with anti-bias mechanisms",
+  "author": "Victor Calauhia",
+  "icon": "🔍",
+  "trigger": {
+    "type": "command",
+    "pattern": "ms-fact-check"
+  },
+  "capabilities": [
+    "workiq",
+    "todo-tracking",
+    "evidence-compilation",
+    "multi-source-verification",
+    "anti-bias-filtering",
+    "source-quality-assessment"
+  ],
+  "examples": [
+    "/ms-fact-check The deployment pipeline is broken in GCC",
+    "/ms-fact-check Feature X has a 3-second latency issue",
+    "/ms-fact-check Web grounding doesn't work in restricted clouds"
+  ]
+}

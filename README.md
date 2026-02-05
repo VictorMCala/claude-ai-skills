@@ -6,7 +6,7 @@ Custom skills for Claude Code tailored for Microsoft 365 Copilot and Work IQ dev
 
 ```
 claude-skills/
-├── fact-checker/          # Systematic fact-checking against documentation
+├── ms-fact-check/          # Systematic fact-checking against documentation
 │   ├── skill.md           # Main skill prompt
 │   ├── metadata.json      # Skill configuration
 │   └── README.md          # Usage documentation
@@ -22,18 +22,18 @@ These skills are designed to be symlinked into Claude Code's skills directory:
 cd ~/Documents/Development/work\ IQ/claude-skills/
 
 # Create symlinks for each skill
-ln -s "$(pwd)/fact-checker" ~/.claude/skills/fact-checker
+ln -s "$(pwd)/ms-fact-check" ~/.claude/skills/ms-fact-check
 ```
 
 ## 📋 Available Skills
 
-### 1. Fact-Checker (`/fact-check`)
+### 1. Fact-Checker (`/ms-fact-check`)
 
-Systematically verifies statements and problems against real documentation, meetings, ICMs, and repositories.
+Systematically verifies statements and problems against Microsoft 365 documentation, meetings, ICMs, and repositories.
 
 **Usage:**
 ```bash
-/fact-check <statement or problem to verify>
+/ms-fact-check <statement or problem to verify>
 ```
 
 **Features:**
@@ -43,7 +43,7 @@ Systematically verifies statements and problems against real documentation, meet
 - ✅ Provides sources and documentation links
 - ✅ Generates architectural recommendations
 
-**See:** [fact-checker/README.md](./fact-checker/README.md)
+**See:** [ms-fact-check/README.md](./ms-fact-check/README.md)
 
 ---
 
@@ -137,7 +137,7 @@ ls -la ~/.claude/skills/
 2. **Create symlinks** for desired skills:
    ```bash
    cd /path/to/claude-skills
-   ln -s "$(pwd)/fact-checker" ~/.claude/skills/fact-checker
+   ln -s "$(pwd)/ms-fact-check" ~/.claude/skills/ms-fact-check
    ```
 3. **Restart Claude Code** (if running) or skills auto-load on next invocation
 
@@ -175,4 +175,5 @@ To add a new skill to this repository:
 
 ## 📝 Version History
 
-- **2026-02-05**: Initial repository setup with fact-checker skill
+- **2026-02-05**: Initial repository setup with ms-fact-check skill
+- **2026-02-05 v2.0**: Enhanced with anti-bias mechanisms, source quality assessment, seniority detection, and recency filtering
