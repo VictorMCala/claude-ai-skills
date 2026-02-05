@@ -1,6 +1,6 @@
 {
   "name": "ms-fact-check",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Systematically fact-check statements against Microsoft 365 documentation, meetings, ICMs, and repositories with anti-bias mechanisms",
   "author": "Victor Calauhia",
   "icon": "🔍",

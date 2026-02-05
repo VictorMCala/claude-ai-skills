@@ -70,9 +70,13 @@ For each claim, provide:
 **Key Findings:**
 [Summary of what the evidence shows]
 
-**Supporting Documents (Prioritized by Quality):**
+---
 
-For each source, include:
+## Sources Analysis
+
+### ✅ **Sources That VERIFY the Claim** (Support/Agree)
+
+List all sources that support or verify the claim:
 
 **[Document/ICM Title](direct-link)**
 📊 **Source Quality:**
@@ -82,8 +86,37 @@ For each source, include:
 - 🏢 Origin: [Status: ✅ External | ⚠️ Internal (Amit's org)]
 - ⭐ Overall Confidence: **HIGH** / **MEDIUM** / **LOW**
 
-**Summary:** [Brief description of what this source says]
-**Relevance:** [Why this source matters for the claim]
+**What it says:** [Brief description]
+**How it supports the claim:** [Explanation]
+
+---
+
+### ❌ **Sources That CONTRADICT the Claim** (Oppose/Refute)
+
+List all sources that contradict or refute the claim:
+
+**[Document/ICM Title](direct-link)**
+📊 **Source Quality:**
+- 📅 Age: [Last modified date] - [Status: ✅ Recent | ⚠️ Older | ❌ Stale]
+- 👤 Author: [Name & Title/Level] - [Status: ✅ Principal+ | 🟡 Senior | 🟢 Standard]
+- 💬 Engagement: [X comments, Y collaborators, Z references] - [Status: ✅ High | 🟡 Medium | 🟢 Low]
+- 🏢 Origin: [Status: ✅ External | ⚠️ Internal (Amit's org)]
+- ⭐ Overall Confidence: **HIGH** / **MEDIUM** / **LOW**
+
+**What it says:** [Brief description]
+**How it contradicts the claim:** [Explanation]
+
+---
+
+### 🔵 **Neutral/Context Sources** (Provide Background)
+
+List sources that provide relevant context but neither strongly support nor contradict:
+
+**[Document/ICM Title](direct-link)**
+📊 **Source Quality:** [Same format as above]
+
+**What it says:** [Brief description]
+**Relevant context:** [Explanation]
 
 ---
 
@@ -100,6 +133,9 @@ At the end, provide:
 
 2. **Source Quality Overview:**
    - Total sources found: X
+   - Sources that VERIFY claim: A (✅)
+   - Sources that CONTRADICT claim: B (❌)
+   - Neutral/context sources: C (🔵)
    - External sources: Y (prioritized)
    - Internal sources: Z (flagged if included)
    - Sources from Principals+: N
@@ -123,11 +159,13 @@ At the end, provide:
 ## Best Practices
 
 **Anti-Bias Mechanisms:**
+- **Show both sides** - Always present sources that verify AND contradict the claim for balanced analysis
 - **Prioritize external validation** - Sources outside Amit's org are more credible for fact-checking
 - **Recency matters** - Always check modification date, not just creation date
 - **Senior voices carry weight** - Principals, Partners, Distinguished Engineers have architectural authority
 - **Engagement indicates validation** - Documents with comments/collaboration have been peer-reviewed
 - **Transparency** - Always show source quality metrics so users can judge credibility
+- **Avoid confirmation bias** - Don't cherry-pick sources; present all relevant evidence
 
 **Query Best Practices:**
 - Always use specific, detailed queries to WorkIQ
