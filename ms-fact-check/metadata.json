@@ -1,6 +1,6 @@
 {
   "name": "ms-fact-check",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Systematically fact-check statements against Microsoft 365 documentation, meetings, ICMs, and repositories with anti-bias mechanisms",
   "author": "Victor Calauhia",
   "icon": "🔍",
@@ -14,7 +14,8 @@
     "evidence-compilation",
     "multi-source-verification",
     "anti-bias-filtering",
-    "source-quality-assessment"
+    "source-quality-assessment",
+    "prominent-source-links"
   ],
   "examples": [
     "/ms-fact-check The deployment pipeline is broken in GCC",

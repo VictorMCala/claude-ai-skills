@@ -62,13 +62,26 @@ For each claim, provide:
 ### Claim: [Statement]
 **STATUS:** [Verification Status]
 
-**Evidence:**
-- [Evidence point 1 with source]
-- [Evidence point 2 with source]
-- [Evidence point 3 with source]
+**Key Evidence (Most Reliable Sources):**
 
-**Key Findings:**
-[Summary of what the evidence shows]
+Show the top 3-5 most reliable sources with direct links:
+
+1. **[Source Title]** (Confidence: HIGH/MEDIUM/LOW)
+   - 🔗 **Link:** [Direct URL to document/ICM/ADO]
+   - 📊 **Quality:** [Age: X | Origin: External/Internal | Seniority: Principal+/Senior/Standard]
+   - 📝 **Key Finding:** [What this source reveals about the claim]
+   - ✅/❌/🔵 **Position:** [VERIFIES / CONTRADICTS / NEUTRAL]
+
+2. **[Source Title]** (Confidence: HIGH/MEDIUM/LOW)
+   - 🔗 **Link:** [Direct URL]
+   - 📊 **Quality:** [Quick quality summary]
+   - 📝 **Key Finding:** [What it says]
+   - ✅/❌/🔵 **Position:** [VERIFIES / CONTRADICTS / NEUTRAL]
+
+[Continue for 3-5 most reliable sources]
+
+**Quick Summary:**
+[1-2 sentence verdict based on the evidence above]
 
 ---
 
