@@ -1,0 +1,37 @@
+{
+  "name": "create-issue",
+  "version": "1.0.0",
+  "description": "Create well-structured Linear issues from exploration findings or bug reports",
+  "author": "Victor Calauhia",
+  "icon": "📋",
+  "trigger": {
+    "type": "command",
+    "pattern": "create-issue"
+  },
+  "capabilities": [
+    "Issue structuring and formatting",
+    "Linear integration via MCP",
+    "Priority assessment",
+    "Acceptance criteria generation",
+    "Context extraction from exploration results"
+  ],
+  "dependencies": {
+    "mcp_servers": ["linear"],
+    "skills": ["explore"]
+  },
+  "tags": ["linear", "issue-tracking", "project-management", "workflow"],
+  "examples": [
+    {
+      "trigger": "/create-issue Fix the authentication timeout bug",
+      "description": "Create a bug report issue in Linear"
+    },
+    {
+      "trigger": "/create-issue Add dark mode to settings page",
+      "description": "Create a feature request issue"
+    }
+  ],
+  "related_skills": [
+    "explore",
+    "create-plan"
+  ]
+}
