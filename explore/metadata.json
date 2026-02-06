@@ -1,0 +1,22 @@
+{
+  "name": "explore",
+  "version": "1.0.0",
+  "description": "Deep exploration and analysis before implementation",
+  "author": "Victor Calauhia",
+  "icon": "🔍",
+  "trigger": {
+    "type": "command",
+    "pattern": "explore"
+  },
+  "capabilities": [
+    "codebase-exploration",
+    "architectural-analysis",
+    "context-gathering",
+    "approach-recommendation"
+  ],
+  "examples": [
+    "/explore How does authentication work in restricted clouds?",
+    "/explore LINEAR-123",
+    "/explore Performance bottleneck in search indexing"
+  ]
+}

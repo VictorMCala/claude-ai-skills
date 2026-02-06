@@ -41,3 +41,21 @@ temp/
 # Environment variables
 .env
 .env.local
+# Environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+shared/config/.env
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+
+# Cost logs (may contain sensitive info)
+.claude/skills-cost-log.json
+
+# OS files
+.DS_Store
+**/.DS_Store

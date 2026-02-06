@@ -1,0 +1,41 @@
+# LiteLLM Configuration for Multi-Model Orchestration
+# Using FREE models: Claude (Claude Code) + GPT-4 (GitHub Models via Copilot)
+
+model_list:
+  # Claude Sonnet 4.5 (primary model - architectural focus)
+  # Inherits authentication from Claude Code environment
+  - model_name: claude-sonnet-4.5
+    litellm_params:
+      model: claude-sonnet-4-5-20250929
+      # API key inherited from Claude Code
+
+  # GPT-4o via GitHub Models (FREE with Copilot subscription!)
+  - model_name: gpt-4o-github
+    litellm_params:
+      model: gpt-4o
+      api_base: https://models.github.com
+      api_key: os.environ/GITHUB_TOKEN
+
+  # Backup: Azure OpenAI (if GitHub Models unavailable)
+  - model_name: gpt-4o-azure
+    litellm_params:
+      model: azure/gpt-4o
+      api_base: os.environ/AZURE_OPENAI_ENDPOINT
+      api_key: os.environ/AZURE_OPENAI_API_KEY
+      api_version: os.environ/AZURE_OPENAI_API_VERSION
+
+# LiteLLM Settings
+litellm_settings:
+  cache: true
+  cache_ttl: 3600
+  set_verbose: false
+
+# Router Settings
+router_settings:
+  routing_strategy: latency-based-routing
+  num_retries: 2
+  timeout: 60
+  # Fallback to Azure OpenAI if GitHub Models fails
+  fallbacks:
+    - from_model: gpt-4o-github
+      to_models: [gpt-4o-azure]
