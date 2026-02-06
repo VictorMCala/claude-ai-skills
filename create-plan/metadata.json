@@ -1,0 +1,40 @@
+{
+  "name": "create-plan",
+  "version": "1.0.0",
+  "description": "Transform Linear issues into detailed, step-by-step implementation plans",
+  "author": "Victor Calauhia",
+  "icon": "📋",
+  "trigger": {
+    "type": "command",
+    "pattern": "create-plan"
+  },
+  "capabilities": [
+    "Task breakdown and decomposition",
+    "File-level change identification",
+    "Dependency ordering",
+    "Code structure guidance",
+    "Testing strategy definition",
+    "Risk assessment and mitigation"
+  ],
+  "dependencies": {
+    "skills": ["explore", "create-issue"],
+    "mcp_servers": ["linear", "workiq"]
+  },
+  "tags": ["planning", "architecture", "implementation", "workflow"],
+  "examples": [
+    {
+      "trigger": "/create-plan for Linear issue ENG-123",
+      "description": "Create plan from a Linear issue"
+    },
+    {
+      "trigger": "/create-plan Add user authentication",
+      "description": "Create plan from a task description"
+    }
+  ],
+  "related_skills": [
+    "explore",
+    "create-issue",
+    "execute",
+    "review"
+  ]
+}
