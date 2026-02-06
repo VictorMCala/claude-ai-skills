@@ -1,0 +1,19 @@
+{
+  "name": "skill-name",
+  "version": "1.0.0",
+  "description": "Brief description of what this skill does",
+  "author": "Victor Calauhia",
+  "icon": "🔧",
+  "trigger": {
+    "type": "command",
+    "pattern": "skill-name"
+  },
+  "capabilities": [
+    "capability-1",
+    "capability-2"
+  ],
+  "examples": [
+    "/skill-name example usage here",
+    "/skill-name another example"
+  ]
+}

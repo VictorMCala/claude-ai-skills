@@ -27,21 +27,25 @@ ln -s "$(pwd)/ms-fact-check" ~/.claude/skills/ms-fact-check
 
 ## 📋 Available Skills
 
-### 1. Fact-Checker (`/ms-fact-check`)
+### 1. Microsoft Fact-Checker (`/ms-fact-check`) - v2.2.0
 
-Systematically verifies statements and problems against Microsoft 365 documentation, meetings, ICMs, and repositories.
+Systematically verifies statements and problems against Microsoft 365 documentation, meetings, ICMs, and repositories with anti-bias mechanisms.
 
 **Usage:**
 ```bash
 /ms-fact-check <statement or problem to verify>
 ```
 
-**Features:**
-- ✅ Queries WorkIQ for evidence (ICMs, docs, meetings, ADO)
-- ✅ Tracks verification progress with todos
-- ✅ Classifies results: VERIFIED, PARTIALLY VERIFIED, NOT VERIFIED
-- ✅ Provides sources and documentation links
-- ✅ Generates architectural recommendations
+**Key Features:**
+- 🔗 **Prominent Source Links (v2.2)** - Top 3-5 most reliable sources with direct links upfront
+- ⚖️ **Balanced Source Analysis (v2.1)** - Shows sources that VERIFY, CONTRADICT, and provide NEUTRAL context
+- 🚫 **Anti-Bias Mechanisms** - Excludes internal team sources, prioritizes external validation
+- 📊 **Source Quality Assessment** - 5-metric system: age, seniority, engagement, origin, confidence
+- 🎯 **Prioritized Evidence** - External + Senior (Principal+) + Recent + High engagement first
+- 📅 **Modification Date Filtering** - Checks when documents were last updated, not just created
+- ✅ **Verification Status** - VERIFIED, PARTIALLY VERIFIED, NOT VERIFIED, NEEDS MORE INFO
+- 📝 **Todo Tracking** - Progress tracking for each verification sub-claim
+- 🔍 **Multi-Source Verification** - Queries ICMs, documents, meetings, ADO work items
 
 **See:** [ms-fact-check/README.md](./ms-fact-check/README.md)
 
@@ -175,5 +179,7 @@ To add a new skill to this repository:
 
 ## 📝 Version History
 
-- **2026-02-05**: Initial repository setup with ms-fact-check skill
-- **2026-02-05 v2.0**: Enhanced with anti-bias mechanisms, source quality assessment, seniority detection, and recency filtering
+- **2026-02-06 v2.2**: Added prominent source links in Key Evidence section (ms-fact-check)
+- **2026-02-05 v2.1**: Added balanced source analysis - VERIFY/CONTRADICT/NEUTRAL categories (ms-fact-check)
+- **2026-02-05 v2.0**: Enhanced with anti-bias mechanisms, source quality assessment, seniority detection, and recency filtering (ms-fact-check)
+- **2026-02-05 v1.0**: Initial repository setup with ms-fact-check skill
