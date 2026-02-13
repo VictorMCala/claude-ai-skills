@@ -1,0 +1,44 @@
+{
+  "user_context": {
+    "role": "Senior Product Manager",
+    "company": "Microsoft",
+    "team": "Sovereign Clouds / BChat",
+    "manager": "Amit",
+    "current_focus": "Deployment confidence, customer feedback systems, sovereign cloud experiences"
+  },
+  "patterns": {
+    "permission_seeking_count": 0,
+    "low_altitude_count": 0,
+    "validation_seeking_count": 0,
+    "ownership_improvements": 0,
+    "strategic_questions_asked": 0,
+    "last_session_date": null,
+    "sessions_count": 0
+  },
+  "blind_spots": [
+    "Tendency to seek validation through accomplishments",
+    "Setting goals too low (task-level vs outcome-level)",
+    "Asking for permission instead of help",
+    "Leading with tasks vs outcomes",
+    "Waiting for direction instead of identifying opportunities"
+  ],
+  "growth_areas": [],
+  "feedback_history": [
+    {
+      "date": "2026-02-11",
+      "from": "Vasant",
+      "key_points": [
+        "Act like it's your own company",
+        "Don't seek validation from manager",
+        "Manager is paid to enable your success, not approve it",
+        "Set ambitious goals as if you have 10 engineers",
+        "Ask for help, not permission",
+        "Lead with outcomes, not accomplishments",
+        "Make manager a partner in refining vision, not an approver",
+        "Focus on outcomes: deployment confidence, customer satisfaction",
+        "Use multiple data sources: feedback, telemetry, diagnostics"
+      ]
+    }
+  ],
+  "session_notes": []
+}

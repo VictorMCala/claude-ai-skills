@@ -1,0 +1,42 @@
+{
+  "name": "advisor",
+  "version": "1.0.0",
+  "description": "Brutally honest advisor that challenges you to think with ownership, altitude, and outcome-focus. Based on Vasant's leadership philosophy.",
+  "author": "Victor Calauhia",
+  "icon": "💪",
+  "trigger": {
+    "type": "command",
+    "pattern": "advisor"
+  },
+  "capabilities": [
+    "Review communications (emails, plans, updates)",
+    "Challenge permission-seeking behavior",
+    "Elevate thinking from tasks to outcomes",
+    "Craft strategic questions to managers",
+    "Set ambitious goals (10x thinking)",
+    "Transform manager relationship (approver → enabler)",
+    "Track patterns and blind spots",
+    "Force ownership and accountability"
+  ],
+  "dependencies": {
+    "skills": [],
+    "tools": ["Read", "Edit", "AskUserQuestion"]
+  },
+  "tags": ["leadership", "communication", "strategy", "ownership", "growth", "career"],
+  "examples": [
+    {
+      "trigger": "/advisor",
+      "description": "Start advisor session"
+    },
+    {
+      "trigger": "/advisor Review my email to Amit about the dashboard project",
+      "description": "Get brutal feedback on communication"
+    },
+    {
+      "trigger": "/advisor deep",
+      "description": "Deep Socratic dialogue mode"
+    }
+  ],
+  "related_skills": [],
+  "memory_file": "advisor_memory.json"
+}
