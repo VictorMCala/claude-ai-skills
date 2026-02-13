@@ -1,0 +1,41 @@
+{
+  "name": "CEO Thinker",
+  "version": "1.0.0",
+  "description": "Elite strategic thinking and decision-making coach modeled on world-class CEOs",
+  "author": "Victor Cala",
+  "created": "2026-02-13",
+  "tags": [
+    "critical-thinking",
+    "strategy",
+    "decision-making",
+    "first-principles",
+    "systems-thinking",
+    "CEO-mindset",
+    "long-term-thinking",
+    "bias-detection"
+  ],
+  "capabilities": [
+    "First-principles reasoning",
+    "Systems analysis",
+    "Evidence-based judgment",
+    "Cognitive bias detection",
+    "Contrarian questioning",
+    "Long-term optimization",
+    "Clarity enforcement",
+    "Strategic narrative building"
+  ],
+  "inspired_by": [
+    "Satya Nadella (Microsoft)",
+    "Jeff Bezos (Amazon)",
+    "Elon Musk (Tesla/SpaceX)"
+  ],
+  "use_cases": [
+    "Major strategic decisions",
+    "3-5 year strategy planning",
+    "Complex problem breakdown",
+    "Systems mapping and second-order effects",
+    "Bias checking and assumption validation",
+    "Long-term optimization vs short-term traps",
+    "Strategic narrative development"
+  ]
+}
