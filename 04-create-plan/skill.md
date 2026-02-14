@@ -1,6 +1,6 @@
 # Create Implementation Plan
 
-Transform Linear issues or task descriptions into detailed, step-by-step implementation plans.
+Transform Linear issues or task descriptions into detailed, step-by-step implementation plans with **PRD (Project Requirements Document) files** that serve as living documentation.
 
 ## Your Responsibilities
 
@@ -15,30 +15,201 @@ Transform Linear issues or task descriptions into detailed, step-by-step impleme
    - Use Read to examine existing implementations
    - Identify dependencies and integration points
 
-3. **Design the Approach**
+3. **Generate PRD Files** (NEW - Documentation-Driven Development)
+   - Create `masterplan.md` - High-level vision and goals
+   - Create `implementation-plan.md` - Build order and sequence
+   - Create `design-guidelines.md` - Visual design specs (CSS, fonts, spacing, colors)
+   - Create `user-journey.md` - User flows and navigation
+   - Create `tasks.md` - Executable task list
+   - Create `rules.md` - Agent behavior rules
+
+4. **Design the Approach**
    - Break down into logical steps
    - Order steps by dependencies
    - Identify potential risks or challenges
    - Consider edge cases and error handling
+   - **Enforce task decomposition** (one focused task at a time)
 
-4. **Create Detailed Plan**
+5. **Create Detailed Plan**
    - Write clear, actionable steps
    - Specify exact files to modify
    - Include code structure guidance
    - Add validation/testing steps
+   - **Break large tasks into small, focused chunks** (3 wishes rule)
 
-## Plan Structure
+## PRD Files Structure (Generate These First)
+
+### 1. masterplan.md
+```markdown
+# Master Plan: [Project Name]
+
+## Vision (One Sentence)
+[Clear, specific description of what we're building]
+
+## Why This Matters
+[Core problem being solved]
+
+## Who This Is For
+[Specific target users, not vague "everyone"]
+
+## Success Looks Like
+[Measurable outcomes]
+
+## Key Decisions
+- [Decision 1 and why]
+- [Decision 2 and why]
+
+## References
+- Design Guidelines: See design-guidelines.md
+- Implementation Sequence: See implementation-plan.md
+- User Flows: See user-journey.md
+- Tasks: See tasks.md
+```
+
+### 2. implementation-plan.md
+```markdown
+# Implementation Plan: [Project Name]
+
+## Build Order
+1. **Phase 1: [Name]** - [Why first]
+   - Component A
+   - Component B
+
+2. **Phase 2: [Name]** - [Why second]
+   - Component C
+   - Component D
+
+## Dependencies
+- [X must be built before Y because...]
+
+## Integration Points
+- [How this connects to existing code]
+
+## Risks
+- [Risk 1]: [Mitigation]
+- [Risk 2]: [Mitigation]
+```
+
+### 3. design-guidelines.md
+```markdown
+# Design Guidelines: [Project Name]
+
+## Visual Style
+**Fonts:**
+- Primary: [Font family, size, weight]
+- Secondary: [Font family, size, weight]
+
+**Colors:**
+- Primary: [Hex code]
+- Secondary: [Hex code]
+- Background: [Hex code]
+- Text: [Hex code]
+
+**Spacing:**
+- Base unit: [e.g., 8px]
+- Component padding: [e.g., 16px]
+- Section margins: [e.g., 32px]
+
+## Component Patterns
+[Reference to existing patterns or design system]
+
+## CSS Guidelines
+```css
+/* Key styles */
+.primary-button {
+  /* Specific styles */
+}
+```
+
+## References
+- Mobbin/Dribbble links: [URLs]
+- Component library: [e.g., shadcn/ui]
+```
+
+### 4. user-journey.md
+```markdown
+# User Journey: [Project Name]
+
+## Entry Points
+- User lands on [page/screen]
+- User action: [First action]
+
+## Main Flow
+1. User [action 1]
+2. System [response 1]
+3. User [action 2]
+4. System [response 2]
+5. Success state: [What user sees]
+
+## Alternative Flows
+- If [condition]: [Alternative path]
+- Error state: [What user sees]
+
+## Exit Points
+- Success: [Where user ends up]
+- Cancel: [What happens]
+```
+
+### 5. tasks.md
+```markdown
+# Tasks: [Project Name]
+
+## Task Breakdown (Small, Focused Chunks)
+
+### Task 1: [Specific Action]
+- **File:** path/to/file.ts
+- **Action:** [Exactly what to do]
+- **Validation:** [How to verify]
+- **Status:** [ ] Pending / [x] Done
+
+### Task 2: [Specific Action]
+[Same structure]
+
+## Notes
+- Each task should take < 30 minutes
+- One focused change per task
+- Read masterplan.md and design-guidelines.md before starting
+```
+
+### 6. rules.md
+```markdown
+# Agent Rules: [Project Name]
+
+## Behavior Instructions
+- Always read masterplan.md before making changes
+- Always read tasks.md to see current task
+- After completing task, mark it done in tasks.md
+- One task at a time - no batching
+- Report what was done and how to test it
+
+## File Reading Priority
+1. masterplan.md (vision)
+2. design-guidelines.md (how it should look)
+3. tasks.md (what to do next)
+4. implementation-plan.md (context)
+
+## Context Management
+- If context window is > 70% full, suggest creating documentation
+- Reference files by path, not full content
+- Focus on current task only
+```
+
+---
+
+## Implementation Plan Structure (After PRDs)
 
 ### 1. Overview
 - **Objective**: [What we're building/fixing]
 - **Approach**: [High-level strategy]
 - **Estimated Complexity**: [S/M/L/XL]
+- **PRD Files Generated**: ✅ All 6 files created
 
 ### 2. Prerequisites
 - [ ] Exploration completed (if needed)
 - [ ] Dependencies identified
 - [ ] Architecture decisions made
 - [ ] Acceptance criteria clear
+- [x] PRD files generated (masterplan, implementation, design, journey, tasks, rules)
 
 ### 3. Implementation Steps
 
@@ -102,36 +273,55 @@ Transform Linear issues or task descriptions into detailed, step-by-step impleme
 - **WorkIQ** (if available): Get organizational context
 - **AskUserQuestion**: Clarify requirements or approach
 
-## Process
+## Process (Documentation-Driven Approach)
 
-1. **Gather Context**
+### Step 1: Gather Context
    - Read Linear issue or task description
    - Review exploration results if referenced
    - Use WorkIQ for organizational context if needed
    - Read relevant files to understand current state
 
-2. **Analyze Architecture**
+### Step 2: Generate PRD Files (CRITICAL)
+
+**Why PRDs First?**
+> "Context is more valuable than code. Documentation prevents token waste."
+
+Generate all 6 PRD files:
+
+1. **masterplan.md** - Ask ChatGPT or use your understanding to create high-level vision
+2. **implementation-plan.md** - Based on exploration, outline build order
+3. **design-guidelines.md** - Extract from design references (Mobbin/Dribbble links) or defaults
+4. **user-journey.md** - Map out user flows from requirements
+5. **tasks.md** - Break implementation into small, focused tasks (< 30 min each)
+6. **rules.md** - Set agent behavior rules for this project
+
+**Output these files in markdown code blocks** so they can be copy-pasted into project.
+
+### Step 3: Analyze Architecture
    - Map out affected components
    - Identify dependencies
    - Find similar patterns in codebase
    - Consider integration points
 
-3. **Design Solution**
+### Step 4: Design Solution with Task Decomposition
    - Choose implementation approach
-   - Break into logical steps
+   - **Break into small, focused tasks** (3 wishes rule: each task should be focused enough that AI doesn't waste tokens)
    - Order by dependencies
    - Identify risks and mitigations
+   - **Each task should be < 30 minutes of work**
 
-4. **Create Detailed Plan**
+### Step 5: Create Detailed Plan
    - Write specific, actionable steps
    - Include file paths and line numbers
    - Add code structure examples
    - Define validation criteria
+   - **Ensure tasks reference PRD files for context**
 
-5. **Review and Refine**
+### Step 6: Review and Refine
    - Check for completeness
    - Verify logical ordering
    - Ensure steps are clear and unambiguous
+   - **Verify tasks are small enough** (no task should do > 3 things)
    - Add any missing context
 
 ## Complexity Guidelines
@@ -158,12 +348,35 @@ Transform Linear issues or task descriptions into detailed, step-by-step impleme
 
 ## Important Notes
 
+- **PRDs are mandatory**: Always generate all 6 PRD files - they prevent context loss
 - **Be specific**: Vague steps lead to confusion during execution
 - **Order matters**: Steps should follow logical dependencies
+- **Task decomposition**: Break tasks into < 30 min focused chunks (3 wishes rule)
 - **Include context**: Explain WHY, not just WHAT
 - **Reference patterns**: Point to similar existing code
+- **Reference PRDs**: Tasks should tell agent to read masterplan.md and design-guidelines.md
 - **Consider testing**: Include validation at each step
 - **Think ahead**: Anticipate potential issues
+
+## The "Three Wishes" Rule (Task Decomposition)
+
+**Analogy**: Like Aladdin's Genie, AI has limited "wishes" (token window) per request.
+
+**Problem**: Large, vague tasks waste tokens:
+- Agent reads entire codebase (80% of tokens)
+- Little room left for thinking and executing (20% of tokens)
+- Result: Poor quality output, needs rework
+
+**Solution**: Small, focused tasks with context in PRDs:
+- Agent reads ONLY relevant PRD files (20% of tokens)
+- Most tokens available for execution (80% of tokens)
+- Result: High quality output, first try
+
+**How to decompose:**
+- ❌ Bad: "Add authentication to the app" (too vague, too large)
+- ✅ Good: "Add login form component to src/components/Auth/LoginForm.tsx following design-guidelines.md"
+
+**Rule of thumb**: If a task would take > 30 minutes or touches > 3 files, break it down.
 
 ## Example Output
 
