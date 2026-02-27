@@ -43,16 +43,25 @@ Be specific and actionable — the goal is that someone (future-you) can paste t
 
 ### Step 4: Save to Disk
 
-Use the **Write** tool to save the snapshot to:
+Use **Bash** to create a folder for this session:
 
 ```
-~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name].md
+~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/
 ```
 
-Use the actual current date and time (24h format) and the user-provided name in the filename.
-Example: `~/.claude/sessions/2026-02-27-1430-snapshot-skill-build.md`
+Example: `~/.claude/sessions/2026-02-27-1430-snapshot-skill-build/`
 
-Create the directory if it doesn't exist using Bash: `mkdir -p ~/.claude/sessions`
+```bash
+mkdir -p ~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]
+```
+
+Then use the **Write** tool to save the snapshot inside that folder:
+
+```
+~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/snapshot.md
+```
+
+The folder is the named container — additional files (code snippets, references, exports) can be added to it in future sessions.
 
 ### Step 5: Update MEMORY.md
 
@@ -63,7 +72,7 @@ Add it under a `## Recent Sessions` section (create it if it doesn't exist, plac
 ```markdown
 ## Recent Sessions
 
-- **YYYY-MM-DD HH:MM** `[session-name]` — [One-line summary of what was worked on] → [~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name].md]
+- **YYYY-MM-DD HH:MM** `[session-name]` — [One-line summary of what was worked on] → `~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/snapshot.md`
 ```
 
 Keep only the 5 most recent session entries in MEMORY.md — remove older ones if needed.
