@@ -13,7 +13,20 @@ Invoke `/snapshot` when:
 
 When invoked, follow these steps in order:
 
-### Step 1: Analyze the Conversation
+### Step 1: Ask for a Session Name
+
+Before doing anything else, ask the user:
+
+> "What would you like to name this snapshot? (e.g. `snapshot-skill-build`, `auth-refactor`, `feedback-sdk-analysis`)"
+
+Use their answer as the session name slug. It will be used in:
+- The filename: `YYYY-MM-DD-HHMM-[session-name].md`
+- The snapshot title heading
+- The MEMORY.md entry
+
+If the user provides no name or says "skip", use `session` as the fallback slug.
+
+### Step 2: Analyze the Conversation
 
 Review the full conversation history and extract:
 
@@ -22,26 +35,26 @@ Review the full conversation history and extract:
 - **Next steps**: What still needs to be done, what to tackle first in the next session
 - **Key findings & decisions**: Important discoveries, architectural choices, gotchas, warnings, unresolved questions
 
-### Step 2: Build the Snapshot
+### Step 3: Build the Snapshot
 
 Format the snapshot as structured markdown using the Output Format below.
 
 Be specific and actionable — the goal is that someone (future-you) can paste this into a brand new Claude session and be fully oriented in under 30 seconds.
 
-### Step 3: Save to Disk
+### Step 4: Save to Disk
 
 Use the **Write** tool to save the snapshot to:
 
 ```
-~/.claude/sessions/YYYY-MM-DD-HHMM-session.md
+~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name].md
 ```
 
-Use the actual current date and time (24h format) in the filename.
-Example: `~/.claude/sessions/2026-02-27-1430-session.md`
+Use the actual current date and time (24h format) and the user-provided name in the filename.
+Example: `~/.claude/sessions/2026-02-27-1430-snapshot-skill-build.md`
 
 Create the directory if it doesn't exist using Bash: `mkdir -p ~/.claude/sessions`
 
-### Step 4: Update MEMORY.md
+### Step 5: Update MEMORY.md
 
 Use the **Edit** tool to prepend a compact session entry to `~/.claude/projects/-Users-victorcalauhia/memory/MEMORY.md`.
 
@@ -50,12 +63,12 @@ Add it under a `## Recent Sessions` section (create it if it doesn't exist, plac
 ```markdown
 ## Recent Sessions
 
-- **YYYY-MM-DD HH:MM** — [One-line summary of what was worked on] → [~/.claude/sessions/YYYY-MM-DD-HHMM-session.md]
+- **YYYY-MM-DD HH:MM** `[session-name]` — [One-line summary of what was worked on] → [~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name].md]
 ```
 
 Keep only the 5 most recent session entries in MEMORY.md — remove older ones if needed.
 
-### Step 5: Confirm
+### Step 6: Confirm
 
 Output a brief confirmation to the user:
 - Snapshot saved to (path)
@@ -67,7 +80,7 @@ Output a brief confirmation to the user:
 ## Output Format
 
 ```markdown
-# Session Snapshot — YYYY-MM-DD HH:MM
+# Session Snapshot — [session-name] — YYYY-MM-DD HH:MM
 
 ## Context
 **Working Directory**: [path]
