@@ -1,0 +1,21 @@
+{
+  "name": "snapshot",
+  "version": "1.0.0",
+  "description": "Capture a structured session summary when context is running low. Saves to disk and updates MEMORY.md for seamless continuation in a new chat.",
+  "author": "Victor Calauhia",
+  "icon": "📸",
+  "trigger": {
+    "type": "command",
+    "pattern": "snapshot"
+  },
+  "capabilities": [
+    "session-summary",
+    "context-preservation",
+    "memory-update",
+    "file-write"
+  ],
+  "examples": [
+    "/snapshot",
+    "/snapshot (invoke when Claude warns about context limits)"
+  ]
+}
