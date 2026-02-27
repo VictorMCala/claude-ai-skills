@@ -13,18 +13,22 @@ Invoke `/snapshot` when:
 
 When invoked, follow these steps in order:
 
-### Step 1: Ask for a Session Name
+### Step 1: Ask for a Session Name and Location
 
-Before doing anything else, ask the user:
+Before doing anything else, ask the user **two questions at once**:
 
-> "What would you like to name this snapshot? (e.g. `snapshot-skill-build`, `auth-refactor`, `feedback-sdk-analysis`)"
+> 1. "What would you like to name this snapshot? (e.g. `snapshot-skill-build`, `auth-refactor`, `feedback-sdk-analysis`)"
+> 2. "Where should it be saved? (default: `~/.claude/sessions/` — or provide a custom path)"
 
-Use their answer as the session name slug. It will be used in:
-- The filename: `YYYY-MM-DD-HHMM-[session-name].md`
-- The snapshot title heading
-- The MEMORY.md entry
+Use their answers as:
+- **Session name slug** → used in the folder name, snapshot title, and MEMORY.md entry
+- **Base path** → where the session folder will be created
 
-If the user provides no name or says "skip", use `session` as the fallback slug.
+Defaults if skipped:
+- Name: `session`
+- Path: `~/.claude/sessions/`
+
+The full folder path will be: `[base-path]/YYYY-MM-DD-HHMM-[session-name]/`
 
 ### Step 2: Analyze the Conversation
 
@@ -43,22 +47,18 @@ Be specific and actionable — the goal is that someone (future-you) can paste t
 
 ### Step 4: Save to Disk
 
-Use **Bash** to create a folder for this session:
-
-```
-~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/
-```
-
-Example: `~/.claude/sessions/2026-02-27-1430-snapshot-skill-build/`
+Use **Bash** to create the session folder at the user-specified location:
 
 ```bash
-mkdir -p ~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]
+mkdir -p [base-path]/YYYY-MM-DD-HHMM-[session-name]
 ```
+
+Example: `mkdir -p ~/.claude/sessions/2026-02-27-1430-snapshot-skill-build`
 
 Then use the **Write** tool to save the snapshot inside that folder:
 
 ```
-~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/snapshot.md
+[base-path]/YYYY-MM-DD-HHMM-[session-name]/snapshot.md
 ```
 
 The folder is the named container — additional files (code snippets, references, exports) can be added to it in future sessions.
@@ -72,7 +72,7 @@ Add it under a `## Recent Sessions` section (create it if it doesn't exist, plac
 ```markdown
 ## Recent Sessions
 
-- **YYYY-MM-DD HH:MM** `[session-name]` — [One-line summary of what was worked on] → `~/.claude/sessions/YYYY-MM-DD-HHMM-[session-name]/snapshot.md`
+- **YYYY-MM-DD HH:MM** `[session-name]` — [One-line summary of what was worked on] → `[base-path]/YYYY-MM-DD-HHMM-[session-name]/snapshot.md`
 ```
 
 Keep only the 5 most recent session entries in MEMORY.md — remove older ones if needed.
